@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist;
+
+<h1>Enter stylist's name:</h1>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Search for stylist!" />
+}
+
+<p>@Html.ActionLink("All Stylists", "Index")</p>
+<p>@Html.ActionLink("Home.", "Index", "Home")</p>

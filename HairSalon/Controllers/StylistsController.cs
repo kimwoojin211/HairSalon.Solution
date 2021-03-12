@@ -63,5 +63,11 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Search()
+    {
+      return View();
+    }
+    
   }
 }
