@@ -8,7 +8,21 @@
 <hr />
 <h4>@Html.DisplayNameFor(model => model.Specialty): @Html.DisplayFor(model => model.Specialty)</h4>
 
-<p>@Html.ActionLink("Edit stylist details", "Edit", new {id = Model.StylistId})</p>
+<h3>@Model.Name's Clients:</h3>
 
+@if (Model.Clients.Count == 0)
+{
+  <h3>@Model.Name currently has no clients!</h3>
+}
+
+<ul>
+@foreach(Client client in Model.Clients)
+{
+  <li>Client: @client.Name</li>
+  @* <li>@Html.ActionLink($"{client.Name}","Details", "Stylists", new { id = client.ClientId })</li> *@
+}
+</ul>
+
+<p>@Html.ActionLink("Edit stylist details", "Edit", new {id = Model.StylistId})</p>
 <p>@Html.ActionLink("Delete stylist", "Delete", new {id = Model.StylistId})</p>
 <p>@Html.ActionLink("Back to all stylists.", "Index")</p>
