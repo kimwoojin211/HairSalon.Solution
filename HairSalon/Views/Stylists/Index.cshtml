@@ -10,9 +10,12 @@
   <h3>No stylists in the database!</h3>
 }
 
+<ul>
 @foreach (Stylist stylist in Model)
 {
-  <h4>@stylist.Name</h4>
+  <li>@stylist.Name</li>
 }
+</ul>
 
+<p>@Html.ActionLink("Add a new stylist", "Create")</p>
 <p>@Html.ActionLink("Home.", "Index", "Home")</p>
