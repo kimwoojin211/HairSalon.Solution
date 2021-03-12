@@ -73,7 +73,7 @@ namespace HairSalon.Controllers
     public ActionResult Search(string name)
     {
       List<Stylist> searchResults = _db.Stylists.Where(Stylist => Stylist.Name == name).ToList();
-      return RedirectToAction("SearchResults");
+      return RedirectToAction("Results", searchResults);
       // List<Stylist> searchResults = new List<Stylist>{};
       // foreach(Stylist stylist in _db.Stylists)
       // {
@@ -83,10 +83,10 @@ namespace HairSalon.Controllers
       //   }
       // }
     }
-    // public ActionResult SearchResults(List<)
-    // {
-    //   return View();
-    // }
+    public ActionResult Results(List<Stylist> searchResults)
+    {
+      return View(searchResults);
+    }
     
   }
 }
