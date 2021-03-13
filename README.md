@@ -39,11 +39,11 @@ _Note: Make sure you have **.NET 5.0** installed. If not, please visit [this lin
 * _Create a file named "appsettings.json" in this directory_
 * _Add the following lines of code to your newly created "appsettings.json" file and save._
 ```
-    {
-        "ConnectionStrings": {
-            "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR DATABASE];uid=root;pwd=[YOUR PASSWORD];"
-        }
-    }
+{
+"ConnectionStrings": {
+"DefaultConnection": "Server=localhost;Port=3306;database=[YOUR DATABASE];uid=root;pwd=[YOUR PASSWORD];"
+}
+}
 ```
 **NOTE:** _[YOUR DATABASE]_ and _[YOUR PASSWORD]_ **MUST** be the same database name and password as those of your local MySql server. Please see **Database Setup** for more details.
 </details>
@@ -79,8 +79,7 @@ _Note: Make sure you have **.NET 5.0** installed. If not, please visit [this lin
 
 ## Known Bugs
 
-* Searching functionality currently does not work. Hitting the search button will lead to a default error page.
-
+* N/A
 ## License
 
 _MIT_
