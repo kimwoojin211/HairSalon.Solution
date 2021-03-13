@@ -73,7 +73,6 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Search(string name)
     {
-      System.Console.WriteLine("name = " + name);
       var searchResults = _db.Stylists.Where(stylist => stylist.Name == name).ToList();
       return View(searchResults);
     }

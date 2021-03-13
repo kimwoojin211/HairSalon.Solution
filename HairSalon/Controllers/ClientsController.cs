@@ -78,13 +78,7 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Search(string name)
     {
-      List<Client> searchResults = _db.Clients.Where(Client => Client.Name == name).ToList();
-      System.Console.WriteLine(searchResults.ToString());
-      return RedirectToAction("Results",searchResults);
-    }
-
-    public ActionResult Results(List<Client> searchResults)
-    {
+      var searchResults = _db.Clients.Where(client => client.Name == name).ToList();
       return View(searchResults);
     }
   }

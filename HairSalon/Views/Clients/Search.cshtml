@@ -1,15 +1,34 @@
-@* @{
+@{
   Layout = "_Layout";
 }
-
-@model HairSalon.Models.Client;
+@using HairSalon.Models;
+@model List<HairSalon.Models.Client>;
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
+  @Html.Label("name")
+  @Html.TextBox("name")
   <input type="submit" value="Search!" />
 }
 
+@if(Model is null)
+{
+  <h3>Please enter a name to search.</h3>
+}
+else
+{
+  @if (Model.Count == 0)
+  {
+    <h3>No clients found! Please try again.</h3>
+  }
+
+  <ul>
+    @foreach (Client client in Model)
+    {
+      <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId})</li>
+    }
+  </ul>
+}
+
 <p>@Html.ActionLink("All Clients", "Index")</p>
-<p>@Html.ActionLink("Home.", "Index", "Home")</p> *@
+<p>@Html.ActionLink("Home.", "Index", "Home")</p>
