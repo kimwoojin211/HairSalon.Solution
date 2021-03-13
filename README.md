@@ -10,10 +10,11 @@
 
 * _C#_
 * _.NET 5.0.102_
-* _SDK 8.0.19_
-* _Asp.net Core Mvc 4.8_
+* _ASP.NET Core Mvc 4.8_
+* _Razor_
 * _Entity Framework Core_
 * _MySql_
+* _Git_
 
 ## Description
 
@@ -25,17 +26,60 @@ _Program that allows a salon owner to:_
 * Add new clients to a specific stylist. (Clients cannot be added if no stylists added.)
 
 ## Setup/Installation Requirements
+<br>
 
-* _Clone this repository to your desktop_
+### Application Setup
+<details>
+<summary>Hide/Show Instructions</summary>
+
+_Note: Make sure you have **.NET 5.0** installed. If not, please visit [this link](https://dotnet.microsoft.com/download/dotnet/5.0)_
+
+* _Clone this repository to your computer from [this repository](https://github.com/kimwoojin211/HairSalon.Solution.git)
 * _In your terminal of choice, navigate to the BestRestaurant directory_
-* _Enter `dotnet build` into the terminal to build the application_
-* _Enter `dotnet run` to run the application within the terminal._
+* _Create a file named "appsettings.json" in this directory_
+* _Add the following lines of code to your newly created "appsettings.json" file and save._
+```
+    {
+        "ConnectionStrings": {
+            "DefaultConnection": "Server=localhost;Port=3306;database=[YOUR DATABASE];uid=root;pwd=[YOUR PASSWORD];"
+        }
+    }
+```
+**NOTE:** _[YOUR DATABASE]_ and _[YOUR PASSWORD]_ **MUST** be the same database name and password as those of your local MySql server. Please see **Database Setup** for more details.
+</details>
+<br>
 
-*
+### Database Setup 
+
+<details>
+<summary>Hide/Show Instructions</summary>
+
+* _If not already installed, please download MySql Workbench [here](https://www.mysql.com/products/workbench/)
+  and follow the installation/setup instructions listed [here](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)_
+* _Open MySql Workbench and select a local server_
+* _In the Navigtor section, click the Administration tab, and click on Data Import/Restore_
+* _Under Import Options, select Import from Self-Contained File, and select "woojin_kim.sql", found in the HairSalon.Solutions directory to import the database structure_
+* _Under Default Schema to be Imported To, select the New button_
+* _Enter a name for your database and hit Ok_
+* _Click Start Import_
+</details>
+<br>
+
+### Once all of the steps above are completed
+
+<details>
+<summary>Hide/Show Instructions</summary>
+
+* _Navigate back to the HairSalon.Solution directory on your terminal_
+* _Navigate into the HairSalon directory_
+* _Enter `dotnet build` into the terminal_
+* _Enter `dotnet run` into the terminal_
+</details>
+<br>
 
 ## Known Bugs
 
-* _None_
+* Searching functionality currently does not work. Hitting the search button will lead to a default error page.
 
 ## License
 
