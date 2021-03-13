@@ -1,7 +1,5 @@
 # _Eau Claire's Salon_
 
-## _This project is not in a complete or portfolio ready state, and should not be considered representational of professional work._
-
 #### _Program that utilizes databases to help manage hair stylists and their clients_
 
 #### By _**Woo Jin Kim**_
