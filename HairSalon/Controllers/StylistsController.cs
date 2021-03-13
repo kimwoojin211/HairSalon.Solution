@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using HairSalon.Models;
+using System;
 namespace HairSalon.Controllers
 {
   public class StylistsController : Controller
@@ -70,16 +71,12 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Search(Stylist stylist)
+    public ActionResult Search(string name)
     {
-      List<Stylist> searchResults = _db.Stylists.Where(Stylist => Stylist.Name == stylist.Name).ToList();
-      return RedirectToAction("Results");
-    }
-
-    public ActionResult Result()
-    {
-      List<Stylist> searchResults = new List<Stylist>{};
+      System.Console.WriteLine("name = " + name);
+      var searchResults = _db.Stylists.Where(stylist => stylist.Name == name).ToList();
       return View(searchResults);
     }
+
   }
 }
