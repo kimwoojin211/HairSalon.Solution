@@ -64,5 +64,22 @@ namespace HairSalon.Controllers
       return RedirectToAction("Index");
     }
 
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Search(Stylist stylist)
+    {
+      List<Stylist> searchResults = _db.Stylists.Where(Stylist => Stylist.Name == stylist.Name).ToList();
+      return RedirectToAction("Results");
+    }
+
+    public ActionResult Result()
+    {
+      List<Stylist> searchResults = new List<Stylist>{};
+      return View(searchResults);
+    }
   }
 }

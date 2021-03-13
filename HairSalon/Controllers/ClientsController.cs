@@ -26,6 +26,7 @@ namespace HairSalon.Controllers
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
+    
     [HttpPost]
     public ActionResult Create(Client client)
     {
@@ -33,11 +34,13 @@ namespace HairSalon.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
     public ActionResult Details(int id)
     {
       Client thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
       return View(thisClient);
     }
+
     public ActionResult Edit(int id)
     {
       var thisClient = _db.Clients.FirstOrDefault(Client => Client.ClientId == id);
@@ -66,6 +69,23 @@ namespace HairSalon.Controllers
       _db.Clients.Remove(thisClient);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+    public ActionResult Search()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Search(Client client)
+    {
+      List<Client> searchResults = _db.Clients.Where(Client => Client.Name == client.Name).ToList();
+      return RedirectToAction("Results");
+    }
+
+    public ActionResult Result()
+    {
+      List<Client> searchResults = new List<Client> { };
+      return View(searchResults);
     }
   }
 }

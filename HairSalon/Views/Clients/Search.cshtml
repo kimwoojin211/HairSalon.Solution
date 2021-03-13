@@ -2,17 +2,14 @@
   Layout = "_Layout";
 }
 
-@model HairSalon.Models.Stylist;
+@model HairSalon.Models.Client;
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Specialty)
-  @Html.DropDownList("Category")
-
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
   <input type="submit" value="Search!" />
 }
 
-<p>@Html.ActionLink("All Stylists", "Index")</p>
+<p>@Html.ActionLink("All Clients", "Index")</p>
 <p>@Html.ActionLink("Home.", "Index", "Home")</p>
