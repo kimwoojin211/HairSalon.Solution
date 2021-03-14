@@ -1,0 +1,34 @@
+@{
+  Layout = "_Layout";
+}
+@using HairSalon.Models;
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Category", "Category")
+  @Html.DropDownList("Category",(IEnumerable
+    <SelectListItem>)ViewBag.Category)
+
+  @Html.Label("Name", "Name")
+  @Html.TextBox("Name")
+  <input type="submit" value="Search!" />
+}
+
+@if(!(Model is null))
+{
+  <p>@Model</p> //@Model shows up, but it says @Model.StylistResults doesn't exist.
+  @* @if (Model.StylistResults.Count == 0 && Model.ClientResults.Count == 0)
+  {
+    <h3>0 results found! Please try again.</h3>
+  }
+
+  <ul>
+    @foreach (Stylist stylist in Model)
+    {
+      <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId})</li>
+    }
+  </ul> *@
+}
+
+<p>@Html.ActionLink("All Clients", "Index")</p>
+<p>@Html.ActionLink("Home.", "Index", "Home")</p>
