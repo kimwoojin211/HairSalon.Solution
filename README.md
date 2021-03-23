@@ -35,7 +35,7 @@ _Program that allows a salon owner to:_
 _Note: Make sure you have **.NET 5.0** installed. If not, please visit [this link](https://dotnet.microsoft.com/download/dotnet/5.0)_
 
 * _Clone this repository to your computer from [this repository](https://github.com/kimwoojin211/HairSalon.Solution.git)
-* _In your terminal of choice, navigate to the BestRestaurant directory_
+* _In your terminal of choice, navigate to the HairSalon directory_
 * _Create a file named "appsettings.json" in this directory_
 * _Add the following lines of code to your newly created "appsettings.json" file and save._
 ```

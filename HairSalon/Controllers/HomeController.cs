@@ -28,6 +28,7 @@ namespace HairSalon.Controllers
     {
       return View();
     }
+    
     public ActionResult Search()
     {
       ViewBag.Category = _selectList;
@@ -49,7 +50,8 @@ namespace HairSalon.Controllers
       {
         clientSearch = _db.Clients.Where(Client => Client.Name.Contains(name)).ToList();
       }
-      var model = new {StylistResults = stylistSearch, ClientResults = clientSearch};
+      Dictionary<string,List<object>> model = new Dictionary(){StylistResults = stylistSearch, ClientResults = clientSearch};
+      model.Add("StylistResults",stylistSearch);
       System.Console.WriteLine(model.StylistResults.Count);
       return View(model); //model gets lost between here and View. or. something. idk. 
     }

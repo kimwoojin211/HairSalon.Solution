@@ -17,7 +17,7 @@
 @if(!(Model is null))
 {
   <p>@Model</p> //@Model shows up, but it says @Model.StylistResults doesn't exist.
-  @* @if (Model.StylistResults.Count == 0 && Model.ClientResults.Count == 0)
+  @if (Model.StylistResults.Count == 0 && Model.ClientResults.Count == 0)
   {
     <h3>0 results found! Please try again.</h3>
   }
@@ -27,7 +27,7 @@
     {
       <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId})</li>
     }
-  </ul> *@
+  </ul>
 }
 
 <p>@Html.ActionLink("All Clients", "Index")</p>
